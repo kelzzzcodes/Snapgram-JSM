@@ -22,13 +22,13 @@ const Home = () => {
          {
           posts?.documents.map((post: Models.Document) =>(
 
-                <PostCard post={post}/>
+                <PostCard post={post} key={post.$id} />
 
           ))
          }
 
             </ul>
-
+ 
           )}
         </div>
       </div>

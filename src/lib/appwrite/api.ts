@@ -92,7 +92,6 @@ export async function signInAccount(user: { email: string; password: string }) {
 
 export async function getCurrentUser() {
   try {
-    // console.log("userId: ", localStorage.getItem("sessionId"));
     // const currentAccount = await account.get();
     const currentAccountId = localStorage.getItem('sessionId')
 
@@ -119,6 +118,7 @@ export async function getCurrentUser() {
 
 export async function signOutAccount() {
   try {
+    localStorage.clear();
     const session = await account.deleteSession('current')
     return session
   } catch (error) {
